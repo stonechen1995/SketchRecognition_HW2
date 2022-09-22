@@ -3,6 +3,15 @@ import pandas as pd
 
 df = pd.read_csv('iris.csv')
 
+from sklearn.utils import shuffle
+df = shuffle(df, random_state=0)
+
+from sklearn.tree import DecisionTreeClassifier
+clf = DecisionTreeClassifier()
+x = df.iloc[:, [0, 1, 2, 3]]
+y = df.iloc[:, 4]
+clf.fit(x,y)
+
 
 y = df['variety'] # by convention, y values are class labels
 X = df.loc[:, df.columns != 'variety'] # x values are everything else (the features)
