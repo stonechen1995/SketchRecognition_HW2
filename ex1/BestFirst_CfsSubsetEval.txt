@@ -1,0 +1,42 @@
+=== Run information ===
+
+Evaluator:    weka.attributeSelection.CfsSubsetEval -P 1 -E 1
+Search:       weka.attributeSelection.BestFirst -D 1 -N 5
+Relation:     features
+Instances:    520
+Attributes:   14
+              f01
+              f02
+              f03
+              f04
+              f05
+              f06
+              f07
+              f08
+              f09
+              f10
+              f11
+              f12
+              f13
+              label
+Evaluation mode:    10-fold cross-validation
+
+
+
+=== Attribute selection 10 fold cross-validation seed: 1 ===
+
+number of folds (%)  attribute
+          10(100 %)    2 f02
+           0(  0 %)    3 f03
+           0(  0 %)    4 f04
+           0(  0 %)    5 f05
+          10(100 %)    6 f06
+           0(  0 %)    7 f07
+           0(  0 %)    8 f08
+           9( 90 %)    9 f09
+           0(  0 %)   10 f10
+           0(  0 %)   11 f11
+           0(  0 %)   12 f12
+           0(  0 %)   13 f13
+           0(  0 %)   14 label
+
