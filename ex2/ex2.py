@@ -9,6 +9,15 @@ y = df.iloc[:, 13]  # label
 from sklearn.utils import shuffle
 df = shuffle(df, random_state=0)
 
+# feature selection
+from sklearn.feature_selection import VarianceThreshold
+sel = VarianceThreshold(threshold=(.8 * (1 - .8)))
+sel.fit_transform(X)
+
+from sklearn.feature_selection import SelectKBest
+from sklearn.feature_selection import chi2
+X_new = SelectKBest(chi2, k=2).fit_transform(X, y)
+
 # create 7 different classifiers
 from sklearn.dummy import DummyClassifier
 dummy_clf = DummyClassifier(strategy="most_frequent")
