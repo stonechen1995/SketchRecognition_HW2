@@ -3,8 +3,8 @@ import pandas as pd
 
 df = pd.read_csv('extended_features.csv')
 _, n = df.shape
-X = df.iloc[:, range(n)]
-y = df.iloc[:, n]
+X = df.iloc[:, range(n - 1)]
+y = df.iloc[:, n - 1]
 
 # shuffle data
 from sklearn.utils import shuffle
@@ -15,9 +15,9 @@ from sklearn.feature_selection import VarianceThreshold
 sel = VarianceThreshold(threshold=(.8 * (1 - .8)))
 sel.fit_transform(X)
 
-from sklearn.feature_selection import SelectKBest
-from sklearn.feature_selection import chi2
-X_new = SelectKBest(chi2, k=2).fit_transform(X, y)
+# from sklearn.feature_selection import SelectKBest
+# from sklearn.feature_selection import chi2
+# X_new = SelectKBest(chi2, k=2).fit_transform(X, y)
 
 # use train/test split
 from sklearn.model_selection import train_test_split

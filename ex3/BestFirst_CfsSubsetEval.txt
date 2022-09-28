@@ -1,0 +1,91 @@
+=== Run information ===
+
+Evaluator:    weka.attributeSelection.CfsSubsetEval -P 1 -E 1
+Search:       weka.attributeSelection.BestFirst -D 1 -N 5
+Relation:     extended_features
+Instances:    520
+Attributes:   46
+              Angle of BB diagonal
+              Aspect
+              Average curvature
+              Average squared speed
+              Bounding box area
+              Bounding box diagonal
+              Bounding box height
+              Bounding box width
+              Convex hull area ratio
+              Cos of first to last
+              Cos of initial angle
+              Curviness
+              DCR
+              Density 1
+              Density 2
+              Distance first to last
+              Enclosing rectangle ratio
+              Entropy
+              Least square error
+              Length perimeter ratio
+              Length ratio
+              Log BB area
+              Log aspect
+              Log longest BB side
+              Log total length
+              Max curvature
+              Max speed squared
+              Min speed squared
+              Movement
+              NDDE
+              Openness
+              Overtracing
+              Perimeter efficiency
+              Perimeter to area
+              Point ratio
+              Sharpness
+              Sin of first to last
+              Sin of initial angle
+              Thinness ratio
+              Total angle
+              Total angle / total length
+              Total duration
+              Total length
+              Total length / BB diagonal
+              Width to height ratio
+              label
+Evaluation mode:    evaluate on all training data
+
+
+
+=== Attribute Selection on all input data ===
+
+Search Method:
+	Best first.
+	Start set: no attributes
+	Search direction: forward
+	Stale search after 5 node expansions
+	Total number of subsets evaluated: 736
+	Merit of best subset found:    0.768
+
+Attribute Subset Evaluator (supervised, Class (nominal): 46 label):
+	CFS Subset Evaluator
+	Including locally predictive attributes
+
+Selected attributes: 1,7,9,10,11,12,14,20,26,30,31,33,35,36,37,38,42,44 : 18
+                     Angle of BB diagonal
+                     Bounding box height
+                     Convex hull area ratio
+                     Cos of first to last
+                     Cos of initial angle
+                     Curviness
+                     Density 1
+                     Length perimeter ratio
+                     Max curvature
+                     NDDE
+                     Openness
+                     Perimeter efficiency
+                     Point ratio
+                     Sharpness
+                     Sin of first to last
+                     Sin of initial angle
+                     Total duration
+                     Total length / BB diagonal
+
