@@ -1,0 +1,93 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomForest -P 100 -I 100 -num-slots 1 -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     gesture_features
+Instances:    160
+Attributes:   46
+              Angle of BB diagonal
+              Aspect
+              Average curvature
+              Average squared speed
+              Bounding box area
+              Bounding box diagonal
+              Bounding box height
+              Bounding box width
+              Convex hull area ratio
+              Cos of first to last
+              Cos of initial angle
+              Curviness
+              DCR
+              Density 1
+              Density 2
+              Distance first to last
+              Enclosing rectangle ratio
+              Entropy
+              Least square error
+              Length perimeter ratio
+              Length ratio
+              Log BB area
+              Log aspect
+              Log longest BB side
+              Log total length
+              Max curvature
+              Max speed squared
+              Min speed squared
+              Movement
+              NDDE
+              Openness
+              Overtracing
+              Perimeter efficiency
+              Perimeter to area
+              Point ratio
+              Sharpness
+              Sin of first to last
+              Sin of initial angle
+              Thinness ratio
+              Total angle
+              Total angle / total length
+              Total duration
+              Total length
+              Total length / BB diagonal
+              Width to height ratio
+              label
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities
+
+Time taken to build model: 0.04 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         159               99.375  %
+Incorrectly Classified Instances         1                0.625  %
+Kappa statistic                          0.9917
+Mean absolute error                      0.0266
+Root mean squared error                  0.0703
+Relative absolute error                  7.1    %
+Root relative squared error             16.2317 %
+Total Number of Instances              160     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.008    0.976      1.000    0.988      0.984    1.000     1.000     gesture2
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     gesture1
+                 0.975    0.000    1.000      0.975    0.987      0.983    1.000     0.999     gesture4
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     gesture3
+Weighted Avg.    0.994    0.002    0.994      0.994    0.994      0.992    1.000     1.000     
+
+=== Confusion Matrix ===
+
+  a  b  c  d   <-- classified as
+ 40  0  0  0 |  a = gesture2
+  0 40  0  0 |  b = gesture1
+  1  0 39  0 |  c = gesture4
+  0  0  0 40 |  d = gesture3
+
