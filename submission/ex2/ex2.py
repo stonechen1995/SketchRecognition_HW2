@@ -4,6 +4,7 @@ import pandas as pd
 df = pd.read_csv('features.csv')
 X = df.iloc[:, range(13)]  # classes
 y = df.iloc[:, 13]  # label
+print(f'X.shape = {X.shape}')
 
 # shuffle data
 from sklearn.utils import shuffle
@@ -12,7 +13,8 @@ df = shuffle(df, random_state=0)
 # feature selection
 from sklearn.feature_selection import VarianceThreshold
 sel = VarianceThreshold(threshold=(.8 * (1 - .8)))
-sel.fit_transform(X)
+X_new = sel.fit_transform(X)
+print(f'X_new.shape = {X_new.shape}')
 
 # from sklearn.feature_selection import SelectKBest
 # from sklearn.feature_selection import chi2
@@ -43,9 +45,14 @@ from sklearn.neighbors import KNeighborsClassifier
 kN_clf = KNeighborsClassifier()
 kN_clf.fit(X, y)
 
+from sklearn.feature_selection import SelectFromModel
 from sklearn.tree import ExtraTreeClassifier
 extraTree_clf = ExtraTreeClassifier()
 extraTree_clf.fit(X, y)
+print(f'feature_importances_ = {sum(extraTree_clf.feature_importances_)}')
+extraTree_model = SelectFromModel(extraTree_clf, prefit=True)
+X_new = extraTree_model.transform(X)
+print(f'X_new.shape: {X_new.shape}')
 
 clf_dict = {"DummyClassifier": dummy_clf, "DecisionTreeClassifier": decisionTree_clf,
             "RandomForestClassifier": randomForest_clf, "MLPClassifier": mlp_clf,
